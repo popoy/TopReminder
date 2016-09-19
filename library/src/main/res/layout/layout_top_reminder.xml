@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/top_reminder_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/black"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/top_reminder_padding_vertical"
+    android:paddingLeft="@dimen/top_reminder_padding_horizontal"
+    android:paddingRight="@dimen/top_reminder_padding_horizontal"
+    android:paddingTop="@dimen/top_reminder_padding_vertical"
+    android:visibility="visible">
+
+    <ImageView
+        android:id="@+id/top_reminder_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/notification_icon_network"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/top_reminder_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:scrollbars="horizontal"
+        android:singleLine="true"
+        android:text="@string/network_unavailable"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+</LinearLayout>

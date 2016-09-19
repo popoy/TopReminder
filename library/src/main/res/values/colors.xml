@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_theme_background_color">#e1dcdd</color>
+    <color name="warning_theme_background_color">#f2b860</color>
+    <color name="error_theme_background_color">#ec0505</color>
+</resources>

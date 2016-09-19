@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="topReminder">
+        <attr name="leftIcon" format="reference" />
+        <attr name="maxLines" format="integer" />
+        <attr name="showIcon" format="boolean" />
+        <attr name="swipeToDismiss" format="boolean" />
+        <attr name="paddingVertical" format="reference" />
+        <attr name="paddingHorizontal" format="reference" />
+        <attr name="reminderText" format="string" />
+        <attr name="reminderTheme">
+            <enum name="defaultTheme" value="0" />
+            <enum name="warningTheme" value="1" />
+            <enum name="errorTheme" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>
