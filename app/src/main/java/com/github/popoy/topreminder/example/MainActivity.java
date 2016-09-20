@@ -35,9 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 reminder.setTheme(TopReminder.THEME_DEFAULT);
-                reminder.showIcon(false);
-                reminder.setText("nihao");
-                reminder.show();
+                reminder.show("hello", true, true);
             }
         });
     }

@@ -2,6 +2,7 @@ package com.github.popoy.topreminder;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -137,15 +138,6 @@ public class TopReminder extends RelativeLayout {
 
     }
 
-    public void showIcon(boolean showIcon) {
-        this.showIcon = showIcon;
-        if (showIcon) {
-            icon.setVisibility(View.VISIBLE);
-        } else {
-            icon.setVisibility(View.GONE);
-        }
-    }
-
     public void setText(int stringRes) {
         textView.setText(stringRes);
     }
@@ -160,7 +152,25 @@ public class TopReminder extends RelativeLayout {
     }
 
     public void show() {
+        show(text);
+    }
+
+    public void show(String text) {
+        show(text, swipeToDismiss, showIcon);
+    }
+
+    public void show(String text, boolean swipeToDismiss, boolean showIcon) {
+        this.swipeToDismiss = swipeToDismiss;
         content.setVisibility(View.VISIBLE);
+        if (!TextUtils.isEmpty(text)) {
+            textView.setText(text);
+        }
+        this.showIcon = showIcon;
+        if (showIcon) {
+            icon.setVisibility(View.VISIBLE);
+        } else {
+            icon.setVisibility(View.GONE);
+        }
     }
 
     public void dismiss() {
