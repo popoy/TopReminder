@@ -26,8 +26,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="10dp"
-        android:scrollbars="horizontal"
-        android:singleLine="true"
         android:text="@string/network_unavailable"
         android:textColor="@android:color/white"
         android:textSize="12sp" />

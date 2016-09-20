@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- topreminder -->
-    <dimen name="top_reminder_padding_vertical">12dp</dimen>
+    <dimen name="top_reminder_padding_vertical">10dp</dimen>
     <dimen name="top_reminder_padding_horizontal">10dp</dimen>
-    <dimen name="top_reminder_padding_vertical_2lines">8dp</dimen>
+    <dimen name="top_reminder_padding_vertical_2lines">5dp</dimen>
 </resources>

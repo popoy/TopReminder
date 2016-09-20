@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 reminder.setTheme(TopReminder.THEME_DEFAULT);
-                reminder.show("hello", true, true);
+                reminder.show("hello world!hello world!hello world!hello world!hello world!hello world!", true, true);
             }
         });
     }

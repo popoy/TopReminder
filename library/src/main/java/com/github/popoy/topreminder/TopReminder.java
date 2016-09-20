@@ -67,6 +67,7 @@ public class TopReminder extends RelativeLayout {
         icon = (ImageView) view.findViewById(R.id.top_reminder_icon);
         textView = (TextView) view.findViewById(R.id.top_reminder_text);
         textView.setText(text);
+        textView.setMaxLines(maxLines);
         if (showIcon) {
             icon.setVisibility(View.VISIBLE);
         } else {
