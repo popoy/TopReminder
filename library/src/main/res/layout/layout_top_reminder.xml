@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@android:color/black"
     android:orientation="horizontal"
+    android:gravity="center"
     android:paddingBottom="@dimen/top_reminder_padding_vertical"
     android:paddingLeft="@dimen/top_reminder_padding_horizontal"
     android:paddingRight="@dimen/top_reminder_padding_horizontal"
@@ -22,7 +23,7 @@
 
     <TextView
         android:id="@+id/top_reminder_text"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="10dp"

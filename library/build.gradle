@@ -36,7 +36,7 @@ uploadArchives {
             snapshotRepository(url: "http://115.29.34.254:8081/nexus/content/repositories/snapshots/") {
                 authentication(userName: "admin", password: "mason")
             }
-            pom.version = "1.2.1"
+            pom.version = "1.2.2"
             pom.artifactId = "topreminder"
             pom.groupId = "com.github.popoy"
             pom.name = "topreminder"
