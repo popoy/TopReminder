@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'maven'
 
 android {
     compileSdkVersion 23
@@ -25,4 +25,22 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
 
+}
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            name = 'mavenCentralReleaseDeployer'
+            repository(url: "http://115.29.34.254:8081/nexus/content/repositories/releases/") {
+                authentication(userName: "admin", password: "mason")
+            }
+            snapshotRepository(url: "http://115.29.34.254:8081/nexus/content/repositories/snapshots/") {
+                authentication(userName: "admin", password: "mason")
+            }
+            pom.version = "1.0"
+            pom.artifactId = "topreminder"
+            pom.groupId = "com.github.popoy"
+            pom.name = "topreminder"
+            pom.packaging = 'aar'
+        }
+    }
 }

@@ -18,6 +18,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven { url "http://115.29.34.254:8081/nexus/content/repositories/snapshots/" }
     }
 }
 

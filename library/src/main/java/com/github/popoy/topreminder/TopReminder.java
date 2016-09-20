@@ -21,15 +21,15 @@ import android.widget.TextView;
 public class TopReminder extends RelativeLayout {
 
     private static final String TAG = TopReminder.class.getSimpleName();
-    private static final int THEME_DEFAULT = 0;
-    private static final int THEME_WARNING = 1;
-    private static final int THEME_ERROR = 2;
+    public static final int THEME_DEFAULT = 0;
+    public static final int THEME_WARNING = 1;
+    public static final int THEME_ERROR = 2;
     private int iconRes;
     private boolean showIcon;
     private int maxLines;
     private boolean swipeToDismiss;
     private String text;
-    private int theme;
+    private int reminderTheme;
 
     private LinearLayout content;
     private ImageView icon;
@@ -53,7 +53,7 @@ public class TopReminder extends RelativeLayout {
         maxLines = a.getInt(R.styleable.topReminder_maxLines, 2);
         text = a.getString(R.styleable.topReminder_reminderText);
         swipeToDismiss = a.getBoolean(R.styleable.topReminder_swipeToDismiss, false);
-        theme = a.getInt(R.styleable.topReminder_reminderTheme, 0);
+        reminderTheme = a.getInt(R.styleable.topReminder_reminderTheme, 0);
         a.recycle();
 
         initView(context);
@@ -65,21 +65,31 @@ public class TopReminder extends RelativeLayout {
         content.setVisibility(View.GONE);
         icon = (ImageView) view.findViewById(R.id.top_reminder_icon);
         textView = (TextView) view.findViewById(R.id.top_reminder_text);
-        if (theme == THEME_DEFAULT) {
+        textView.setText(text);
+        if (showIcon) {
+            icon.setVisibility(View.VISIBLE);
+        } else {
+            icon.setVisibility(View.GONE);
+        }
+        updateTheme();
+    }
+
+    private void updateTheme() {
+        if (reminderTheme == THEME_DEFAULT) {
             content.setBackgroundResource(R.color.default_theme_background_color);
             if (iconRes > 0) {
                 icon.setImageResource(iconRes);
             } else {
                 icon.setImageResource(R.drawable.notification_icon_network);
             }
-        } else if (theme == THEME_WARNING) {
+        } else if (reminderTheme == THEME_WARNING) {
             content.setBackgroundResource(R.color.warning_theme_background_color);
             if (iconRes > 0) {
                 icon.setImageResource(iconRes);
             } else {
                 icon.setImageResource(R.drawable.notification_icon_network);
             }
-        } else if (theme == THEME_ERROR) {
+        } else if (reminderTheme == THEME_ERROR) {
             content.setBackgroundResource(R.color.error_theme_background_color);
             if (iconRes > 0) {
                 icon.setImageResource(iconRes);
@@ -87,12 +97,8 @@ public class TopReminder extends RelativeLayout {
                 icon.setImageResource(R.drawable.notification_icon_network);
             }
         }
-        if (showIcon) {
-            icon.setVisibility(View.VISIBLE);
-        } else {
-            icon.setVisibility(View.GONE);
-        }
-        textView.setText(text);
+
+        invalidate();
     }
 
     @Override
@@ -129,6 +135,28 @@ public class TopReminder extends RelativeLayout {
             return super.onTouchEvent(event);
         }
 
+    }
+
+    public void showIcon(boolean showIcon) {
+        this.showIcon = showIcon;
+        if (showIcon) {
+            icon.setVisibility(View.VISIBLE);
+        } else {
+            icon.setVisibility(View.GONE);
+        }
+    }
+
+    public void setText(int stringRes) {
+        textView.setText(stringRes);
+    }
+
+    public void setText(String text) {
+        textView.setText(text);
+    }
+
+    public void setTheme(int theme) {
+        reminderTheme = theme;
+        updateTheme();
     }
 
     public void show() {

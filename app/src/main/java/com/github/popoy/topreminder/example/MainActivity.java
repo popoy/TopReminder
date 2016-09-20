@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         textview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                reminder.setTheme(TopReminder.THEME_DEFAULT);
+                reminder.showIcon(false);
+                reminder.setText("nihao");
                 reminder.show();
             }
         });
